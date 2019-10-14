@@ -1,5 +1,5 @@
 def cadastro_exame
-    endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/exame'
+    endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/exames'
 
     @header = {
         'Content-Type': 'application/json'            

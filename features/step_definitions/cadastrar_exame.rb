@@ -12,6 +12,5 @@ Então("devo receber o codigo {int} para exame cadastrado com sucesso") do |codi
 end
   
 Então("devo visualizar a mensagem  com o {string} do exame inserido com sucesso") do |nome|
-    puts @exame.parsed_response
-    # expect(@exame.parsed_response).to eql "Exame '#{nome}' inserido com sucesso."
+    expect(@exame.parsed_response).to eql "Exame '#{nome}' inserido com sucesso."
 end

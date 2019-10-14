@@ -1,25 +1,25 @@
-# Before  do
-#         endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/exames'
+Before  do
+        endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/exames'
     
-#         @header = {
-#             'Content-Type': 'application/json'            
-#              }
+        @header = {
+            'Content-Type': 'application/json'            
+             }
                         
-#          @body = {     
-#                 nome: "GLICO"
-#              }.to_json       
+         @body = {     
+                nome: "GLICO"
+             }.to_json       
              
-#          HTTParty.delete(endpoint, headers: @header, body: @body)  
+         HTTParty.delete(endpoint, headers: @header, body: @body)  
          
-#          endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos'
+         endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos'
     
-#          @header = {
-#              'Content-Type': 'application/json'            
-#               }
+         @header = {
+             'Content-Type': 'application/json'            
+              }
                          
-#           @body = {     
-#                  nome: "SIEMENS"
-#               }.to_json       
+          @body = {     
+                 nome: "SIEMENS"
+              }.to_json       
               
-#           HTTParty.delete(endpoint, headers: @header, body: @body)  
-# end
+          HTTParty.delete(endpoint, headers: @header, body: @body)  
+end

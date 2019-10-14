@@ -15,3 +15,4 @@ Funcionalidade: Cadastrar exame
         Exemplos:
         |Nome   |
         |GLICO  |
+        |TSH    |
