@@ -1,4 +1,5 @@
 #language: pt
+
 @equipamento
 Funcionalidade: Cadastrar equipamento
     Como aplicação
@@ -7,26 +8,27 @@ Funcionalidade: Cadastrar equipamento
 
 
     Esquema do Cenario: Equipamento cadastrado com sucesso
-        Dado que acessei API de Hospital Contingencia para o cadastro de equipamento
-        Quando faço uma chamada do tipo POST para o endpoint /equipamentos
-        Então devo receber o codigo 200 para equipamento cadastrado com sucesso
-        E devo visualizar a mensagem  com o "<Nome>" do equipamento inserido com sucesso
+        Dado que eu tenha os seguintes equipamentos:
+               | nome | <nome> |
+        Quando faço uma chamada do tipo POST para o endpoint de cadastro de equipamentos
+        Então devo receber o codigo "200" para equipamento cadastrado com sucesso
+        E devo visualizar a mensagem  com o "<nome>" do equipamento inserido com sucesso
 
         Exemplos:
-        |Nome    |
+        |nome    |
         |SIEMENS |
 
 
-    Esquema do Cenario: Equipamento já está cadastrado
-        Dado que acessei API de Hospital Contingencia para o cadastro de equipamento
-        Quando faço uma chamada do tipo POST para o endpoint /equipamentos
-        E em seguida faço uma nova chamada para o mesmo endpoint
-        Então devo receber o codigo 409 para equipamento já cadastrado
-        E devo visualizar a mensagem com o "<Nome>" do equipamento informando que o mesmo já existe
+    # Esquema do Cenario: Validacao de equipamento ja cadastrado
+    #     Dado que eu tenha os seguintes equipamentos cadastrados:
+    #            | nome | <nome> |
+    #     Quando faço uma chamada do tipo POST passando equipamentos ja cadastrados
+    #     Então devo receber o codigo "409" para equipamento ja existente
+    #     E devo visualizar a mensagem  com o "<nome>" do equipamento ja cadastrado
 
-        Exemplos:
-        |Nome    |
-        |SIEMENS |
+    #     Exemplos:
+    #     |nome    |
+    #     |SIEMENS |
 
 
 
