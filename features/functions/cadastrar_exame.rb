@@ -1,7 +1,5 @@
-def cadastro_exame
-    @endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/exames'
-
-    @header = {
+def cadastro_exame(endpoint, exameBDD)
+     @header = {
         'Content-Type': 'application/json'            
          }
                     
@@ -12,5 +10,5 @@ def cadastro_exame
                 equipamento: "SIEMENS"
          }.to_json       
          
-     return HTTParty.post(@endpoint, headers: @header, body: @body)    
+     return HTTParty.post(endpoint, headers: @header, body: @body)    
 end
