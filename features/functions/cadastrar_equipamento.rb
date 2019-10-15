@@ -28,21 +28,18 @@ def obter_equipamentos
          
      return HTTParty.get(endpoint, headers: @header)     
 end
-
+   
 def delete_all(equipamentos)
-    puts equipamentos
-    puts "***********"
     endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos'
     if equipamentos != nil
-     count = equipamentos.count
-     puts count
-     puts "***********"
-     count.times do
-      count = count - 1
-      result = HTTParty.delete(endpoint, headers: @header, body: @body)
-    #   expect(result.response.code).to eql "200"
-     end
-  end
-end
-    
+        count = equipamentos.count
+         count.times do
+            count = count - 1
+            body = {nome: "#{equipamentos[count]}"}.to_json
+            result = HTTParty.delete(endpoint, headers: @header, body: body)
+            expect(result.response.code).to eql "200"
+        end
+    end
+end 
+
 
