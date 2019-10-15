@@ -39,8 +39,8 @@ def delete_all(equipamentos)
      puts "***********"
      count.times do
       count = count - 1
-      result = HTTParty.delete(endpoint, headers: @header, body: ({"nome: #{equipamentos[count]}"}).to_json)      
-      expect(result.response.code).to eql "200"
+      result = HTTParty.delete(endpoint, headers: @header, body: @body)
+    #   expect(result.response.code).to eql "200"
      end
   end
 end
