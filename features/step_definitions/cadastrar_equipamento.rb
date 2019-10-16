@@ -17,7 +17,6 @@ end
 
 Dado("que eu tenha os seguintes equipamentos cadastrados:") do |table|
     @equipamentoBDD = table.rows_hash
-    puts @equipamentoBDD['nome']
     @endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos'
     @equipamento = cadastro_equipamento(@endpoint, @equipamentoBDD['nome'])
     expect(@equipamento.code).to eql 200
