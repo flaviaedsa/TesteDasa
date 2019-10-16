@@ -9,13 +9,13 @@ Funcionalidade: Cadastrar equipamento
 
     Esquema do Cenario: Equipamento cadastrado com sucesso
         Dado que eu tenha os seguintes equipamentos:
-            | nome | <nome> |
+               | nome | <nome> |
         Quando faço uma chamada do tipo POST para o endpoint de cadastro de equipamentos
         Então devo receber o codigo "200" para equipamento cadastrado com sucesso
         E devo visualizar a mensagem  com o "<nome>" do equipamento inserido com sucesso
 
         Exemplos:
-        |nome     |
+        |nome    |
         |SIEMENSS |
 
 
@@ -27,7 +27,7 @@ Funcionalidade: Cadastrar equipamento
         E devo visualizar a mensagem  com o "<nome>" do equipamento ja cadastrado
 
         Exemplos:
-        |nome     |
+        |nome    |
         |SIEMENSS |
 
 

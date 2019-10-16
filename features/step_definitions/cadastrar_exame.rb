@@ -11,7 +11,7 @@ end
 
 Quando("faço uma chamada do tipo POST para o endpoint de cadastro de exames") do
   @endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/exames"
-  @exame = cadastro_exame(@endpoint, @exameBDD["exame1"])
+  @exame = cadastro_exame(@endpoint, @exameBDD["exame"])
 end
 
 Então("devo receber o codigo {string} para exame cadastrado com sucesso") do |codigo|

@@ -30,14 +30,21 @@ end
 
 def delete_all(equipamentos)
   endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos"
-  if equipamentos != nil
-    count = equipamentos.count
-    count.times do
-      count = count - 1
-      body = { nome: "#{equipamentos[count]}" }.to_json
-      result = HTTParty.delete(endpoint, headers: @header, body: body)
-      puts result.response.code
-      expect(result.response.code).to eql "200"
-    end
-  end
+  body = { nome: "#{equipamentos}" }.to_json
+  result = HTTParty.delete(endpoint, headers: @header, body: body)
+  expect(result.response.code).to eql "200"
 end
+
+# def delete_all(equipamentos)
+#   endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos"
+#   if equipamentos != nil
+#     count = equipamentos.count
+#     count.times do
+#       count = count - 1
+#       body = { nome: "#{equipamentos[count]}" }.to_json
+#       result = HTTParty.delete(endpoint, headers: @header, body: body)
+#       puts result.response.code
+#       expect(result.response.code).to eql "200"
+#     end
+#   end
+# end
