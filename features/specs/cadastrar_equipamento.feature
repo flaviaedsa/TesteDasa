@@ -19,16 +19,16 @@ Funcionalidade: Cadastrar equipamento
         |SIEMENS |
 
 
-    # Esquema do Cenario: Validacao de equipamento ja cadastrado
-    #     Dado que eu tenha os seguintes equipamentos cadastrados:
-    #            | nome | <nome> |
-    #     Quando faço uma chamada do tipo POST passando equipamentos ja cadastrados
-    #     Então devo receber o codigo "409" para equipamento ja existente
-    #     E devo visualizar a mensagem  com o "<nome>" do equipamento ja cadastrado
+    Esquema do Cenario: Validacao de equipamento ja cadastrado
+        Dado que eu tenha os seguintes equipamentos cadastrados:
+               | nome | <nome> |
+        Quando faço uma chamada do tipo POST passando equipamentos ja cadastrados
+        Então devo receber o codigo "409" para equipamento ja existente
+        E devo visualizar a mensagem  com o "<nome>" do equipamento ja cadastrado
 
-    #     Exemplos:
-    #     |nome    |
-    #     |SIEMENS |
+        Exemplos:
+        |nome    |
+        |SIEMENS |
 
 
 
