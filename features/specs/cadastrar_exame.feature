@@ -19,4 +19,4 @@ Funcionalidade: Cadastrar exame
         Exemplos:
         |nome     |exame  |
         |SIEMENS  |GLICO  |
-        |SIEMENS  |TSH    |
+        |         |TSH    |
