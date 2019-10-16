@@ -16,7 +16,6 @@ def cadastro_equipamento(endpoint, equipamentoBDD)
          }.to_json       
          
       return HTTParty.post(endpoint, headers: @header, body: @body)  
- 
 end
 
 def obter_equipamentos
