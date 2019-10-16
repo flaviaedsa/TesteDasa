@@ -15,8 +15,8 @@ Funcionalidade: Cadastrar equipamento
         E devo visualizar a mensagem  com o "<nome>" do equipamento inserido com sucesso
 
         Exemplos:
-        |nome    |
-        |SIEMENS |
+        |nome     |
+        |SIEMENSS |
 
 
     Esquema do Cenario: Validacao de equipamento ja cadastrado
@@ -27,8 +27,8 @@ Funcionalidade: Cadastrar equipamento
         E devo visualizar a mensagem  com o "<nome>" do equipamento ja cadastrado
 
         Exemplos:
-        |nome    |
-        |SIEMENS |
+        |nome     |
+        |SIEMENSS |
 
 
 

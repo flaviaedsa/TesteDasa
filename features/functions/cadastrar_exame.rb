@@ -7,7 +7,7 @@ def cadastro_exame(endpoint, exameBDD)
     codigo: "#{exameBDD}",
     codigoInterface: "COD A",
     material: "SORO",
-    equipamento: "SIEMENS",
+    equipamento: "SIEMENSS",
   }.to_json
 
   return HTTParty.post(endpoint, headers: @header, body: @body)

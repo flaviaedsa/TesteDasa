@@ -11,12 +11,12 @@ Funcionalidade: Cadastrar exame
         Dado que eu tenha um equipamento cadastrado:
             | nome | <nome> |
         E tenha os seguintes exames:  
-            | exame | <exame> |
+            | exame | <exame1> | <exame2> |
         Quando faço uma chamada do tipo POST para o endpoint de cadastro de exames
         Então devo receber o codigo "200" para exame cadastrado com sucesso
         E devo visualizar a mensagem  com o "<exame>" do exame inserido com sucesso
 
         Exemplos:
-        |nome     |exame  |
-        |SIEMENS  |GLICO  |
-        |         |TSH    |
+        |nome     |exame1 |exame2
+        |SIEMENS  |GLICO  |TSH
+   
