@@ -16,7 +16,6 @@ Então("devo visualizar a mensagem  com o {string} do equipamento inserido com s
 end
 
 Dado("que eu tenha os seguintes equipamentos cadastrados:") do |table|
-    puts @equipamentoBDD['nome']
     @endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos'
     @equipamento = cadastro_equipamento(@endpoint, @equipamentoBDD['nome'])
     expect(@equipamento.code).to eql 200
@@ -31,6 +30,6 @@ Então("devo receber o codigo {string} para equipamento ja existente") do |codig
     expect(@equipamentojacadastrado.code).to eql 409
 end
   
-Então("devo visualizar a mensagem  com o {string} do equipamento ja cadastrado") do |string|
+Então("devo visualizar a mensagem  com o {string} do equipamento ja cadastrado") do |nome|
     expect(@equipamentojacadastrado.parsed_response).to eql "O cadastro do equipamento '#{nome}' já existe!"
 end
