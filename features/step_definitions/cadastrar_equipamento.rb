@@ -16,13 +16,14 @@ Então("devo visualizar a mensagem  com o {string} do equipamento inserido com s
 end
 
 Dado("que eu tenha os seguintes equipamentos cadastrados:") do |table|
+    @equipamentoBDD = table.rows_hash
+    puts @equipamentoBDD['nome']
     @endpoint = 'http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos'
     @equipamento = cadastro_equipamento(@endpoint, @equipamentoBDD['nome'])
     expect(@equipamento.code).to eql 200
 end
   
 Quando("faço uma chamada do tipo POST passando equipamentos ja cadastrados") do
-    @equipamentoBDD = table.rows_hash
     @equipamentojacadastrado = cadastro_equipamento(@endpoint, @equipamentoBDD['nome'])
 end
   
