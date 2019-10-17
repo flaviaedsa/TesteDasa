@@ -27,7 +27,7 @@ Funcionalidade: Cadastrar equipamento
         E devo visualizar a mensagem  com o "<nome>" do equipamento ja cadastrado
 
         Exemplos:
-        |nome    |
+        |nome     |
         |SIEMENSS |
 
 

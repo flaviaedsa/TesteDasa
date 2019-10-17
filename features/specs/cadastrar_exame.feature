@@ -10,14 +10,13 @@ Funcionalidade: Cadastrar exame
     Esquema do Cenario: Equipamento cadastrado com sucesso
         Dado que eu tenha um equipamento cadastrado:
             | nome | <nome> |
-        E tenha os seguintes exames:  
-            | exame1 | <exame1> |
-            | exame2 | <exame2> |
+        E tenha os seguintes exames para cadastrar:  
+            | exame | <exame> |
         Quando faço uma chamada do tipo POST para o endpoint de cadastro de exames
         Então devo receber o codigo "200" para exame cadastrado com sucesso
-        E devo visualizar a mensagem  com o "<exame1>" do exame inserido com sucesso
-        E devo visualizar a mensagem  com o "<exame2>" do exame inserido com sucesso
+        E devo visualizar a mensagem  com o "<exame>" do exame inserido com sucesso
 
         Exemplos:
-        |nome     |exame1 |exame2 |
-        |SIEMENSS |GLICO  |TSH    |
+        | nome      | exame  |
+        | SIEMENSS8 | teste8 |
+        # | SIEMENSS7 | teste3 |

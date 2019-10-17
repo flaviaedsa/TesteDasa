@@ -5,13 +5,13 @@ Dado("que eu tenha um equipamento cadastrado:") do |table|
   expect(@equipamento.code).to eql 200
 end
 
-Dado("tenha os seguintes exames:") do |table|
+Dado("tenha os seguintes exames para cadastrar:") do |table|
   @exameBDD = table.rows_hash
 end
 
 Quando("faço uma chamada do tipo POST para o endpoint de cadastro de exames") do
   @endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/exames"
-  @exame = cadastro_exame(@endpoint, @exameBDD["exame"])
+  @exame = cadastro_exame(@endpoint, @equipamentoBDD["nome"], @exameBDD["exame"])
 end
 
 Então("devo receber o codigo {string} para exame cadastrado com sucesso") do |codigo|
@@ -20,4 +20,5 @@ end
 
 Então("devo visualizar a mensagem  com o {string} do exame inserido com sucesso") do |exame|
   expect(@exame.parsed_response).to eql "Exame '#{exame}' inserido com sucesso."
+  @delete = delete_all(@exameBDD["nome"])
 end
