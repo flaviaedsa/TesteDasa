@@ -1,4 +1,4 @@
-def cadastro_equipamento(endpoint, equipamentoBDD)
+def cadastro_equipamento(endpoint, equipamentoBDD, protocoloBDD)
   @header = {
     'Content-Type': "application/json",
   }
@@ -7,7 +7,7 @@ def cadastro_equipamento(endpoint, equipamentoBDD)
     nome: "#{equipamentoBDD}",
     ip: "172.168.1.2",
     porta: 8080,
-    protocolo: "ASTM",
+    protocolo: "#{protocoloBDD}",
     bidirecional: true,
     fazQuery: true,
     ativo: true,
@@ -17,16 +17,6 @@ def cadastro_equipamento(endpoint, equipamentoBDD)
 
   return HTTParty.post(endpoint, headers: @header, body: @body)
 end
-
-# def obter_equipamentos
-#   endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos/all"
-
-#   @header = {
-#     'Content-Type': "application/json",
-#   }
-
-#   return HTTParty.get(endpoint, headers: @header)
-# end
 
 def delete_equipamento(equipamentos)
   endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["equipamentos"]}"

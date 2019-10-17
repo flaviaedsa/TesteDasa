@@ -13,16 +13,6 @@ def cadastro_exame(endpoint, equipamentoBDD, exameBDD, materialBDD)
   return HTTParty.post(endpoint, headers: @header, body: @body)
 end
 
-# def obter_exames
-#   endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/exames/all"
-
-#   @header = {
-#     'Content-Type': "application/json",
-#   }
-
-#   return HTTParty.get(endpoint, headers: @header)
-# end
-
 def delete_exame(exames)
   endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["exames"]}"
   body = { codigo: "#{exames}" }.to_json

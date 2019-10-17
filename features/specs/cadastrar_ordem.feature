@@ -8,7 +8,8 @@ Funcionalidade: Cadastrar ordem
 
     Esquema do Cenario: Ordem cadastrada com sucesso
         Dado que eu tenha um equipamento cadastrado:
-            | nome | <nome> |
+            | nome      | <nome>      |
+            | protocolo | <protocolo> |
         E tenha os seguintes exames cadastrados:  
             | exame1    | <exame1>    |
             | exame2    | <exame2>    |
@@ -24,6 +25,5 @@ Funcionalidade: Cadastrar ordem
         E devo visualizar uma amostra para cada exame de material distinto
 
         Exemplos:
-        | nome      | exame1    | exame2    | exame3 | exame4 | material1 | material2 | material3 |
-        | SIEMENSS9 | Hemograma | VitaminaD | B12    | Urina  | Soro      | Sangue    | Urina     |
-      
+            | nome      | protocolo | exame1    | exame2    | exame3 | exame4 | material1 | material2 | material3 |
+            | SIEMENSS9 | ASTM      | Hemograma | VitaminaD | B12    | Urina  | Soro      | Sangue    | Urina     |      
