@@ -1,0 +1,6 @@
+report_html: --format html --out=reports/resultTest.html
+report_json: --format json --out=reports/resultTest.json
+
+dev: --no-source --color --format pretty -p report_html ENV_TYPE=dev
+
+default: -p dev

@@ -29,7 +29,7 @@ end
 # end
 
 def delete_equipamento(equipamentos)
-  endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos"
+  endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["equipamentos"]}"
   body = { nome: "#{equipamentos}" }.to_json
   result = HTTParty.delete(endpoint, headers: @header, body: body)
   expect(result.response.code).to eql "200"

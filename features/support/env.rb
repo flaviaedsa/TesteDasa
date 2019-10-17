@@ -2,5 +2,4 @@ require "httparty"
 require "cucumber"
 require "rspec"
 
-api_configs = YAML.load_file('./features/support/api.yml')
-$api = api_configs[$profile]
+CONFIG = YAML.load_file(File.join(Dir.pwd, "configs/#{ENV["ENV_TYPE"]}.yml"))

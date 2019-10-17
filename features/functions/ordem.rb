@@ -25,6 +25,6 @@ def cadastro_ordem(endpoint, equipamentoBDD, exame1BDD, exame2BDD, exame3BDD, ex
 end
 
 def obter_ordens(nome)
-  endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/ordens/#{nome}"
+  endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["ordens"]}/#{nome}"
   return HTTParty.get(endpoint)
 end

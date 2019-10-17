@@ -1,0 +1,5 @@
+apis:
+    base_url: 'http://contigencia-hospitalar-dev.azurewebsites.net'
+    equipamentos: '/equipamentos'
+    exames: '/exames'
+    ordens: '/ordens'

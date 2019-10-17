@@ -1,6 +1,6 @@
 Dado("tenha os seguintes exames cadastrados:") do |table|
   @exameBDD = table.rows_hash
-  @endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/exames"
+  @endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["exames"]}"
   @exame = cadastro_exame(@endpoint, @equipamentoBDD["nome"], @exameBDD["exame1"], @exameBDD["material1"])
   @exame = cadastro_exame(@endpoint, @equipamentoBDD["nome"], @exameBDD["exame2"], @exameBDD["material1"])
   @exame = cadastro_exame(@endpoint, @equipamentoBDD["nome"], @exameBDD["exame3"], @exameBDD["material2"])
@@ -9,7 +9,7 @@ Dado("tenha os seguintes exames cadastrados:") do |table|
 end
 
 Quando("faço uma chamada do tipo POST para o endpoint de cadastro de ordens") do
-  @endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/ordens"
+  @endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["ordens"]}"
   @ordem = cadastro_ordem(@endpoint, @equipamentoBDD["nome"], @exameBDD["exame1"], @exameBDD["exame2"], @exameBDD["exame3"], @exameBDD["exame4"])
 end
 

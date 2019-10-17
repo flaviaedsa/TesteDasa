@@ -1,4 +1,0 @@
-dev:
-  end_equipamento: "http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos"
-  end_exame: "http://contigencia-hospitalar-dev.azurewebsites.net/exames"
-  end_ordem: "http://contigencia-hospitalar-dev.azurewebsites.net/ordens"

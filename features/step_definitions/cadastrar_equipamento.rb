@@ -3,7 +3,8 @@ Dado("que eu tenha os seguintes equipamentos:") do |table|
 end
 
 Quando("faço uma chamada do tipo POST para o endpoint de cadastro de equipamentos") do
-  @endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos"
+  # @endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos"
+  @endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["equipamentos"]}"
   @equipamento = cadastro_equipamento(@endpoint, @equipamentoBDD["nome"])
 end
 
@@ -18,7 +19,7 @@ end
 
 Dado("que eu tenha os seguintes equipamentos cadastrados:") do |table|
   @equipamentoBDD = table.rows_hash
-  @endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos"
+  @endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["equipamentos"]}"
   @equipamento = cadastro_equipamento(@endpoint, @equipamentoBDD["nome"])
   expect(@equipamento.code).to eql 200
 end
