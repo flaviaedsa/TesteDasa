@@ -28,7 +28,7 @@ end
 #   return HTTParty.get(endpoint, headers: @header)
 # end
 
-def delete_all(equipamentos)
+def delete_equipamento(equipamentos)
   endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/equipamentos"
   body = { nome: "#{equipamentos}" }.to_json
   result = HTTParty.delete(endpoint, headers: @header, body: body)

@@ -19,4 +19,4 @@ Funcionalidade: Cadastrar exame
         Exemplos:
         | nome      | exame  |
         | SIEMENSS9 | Teste9 |
-        # | SIEMENSS7 | teste3 |
+        | SIEMENSS7 | Teste7 |

@@ -21,4 +21,5 @@ end
 Então("devo visualizar a mensagem  com o {string} do exame inserido com sucesso") do |exame|
   expect(@exame.parsed_response).to eql "Exame '#{exame}' inserido com sucesso."
   @delete = delete_exame(@exameBDD["exame"])
+  @delete = delete_equipamento(@equipamentoBDD["nome"])
 end

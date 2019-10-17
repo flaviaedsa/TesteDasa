@@ -13,7 +13,7 @@ end
 
 Então("devo visualizar a mensagem  com o {string} do equipamento inserido com sucesso") do |nome|
   expect(@equipamento.parsed_response).to eql "Equipamento '#{nome}' inserido com sucesso."
-  @delete = delete_all(@equipamentoBDD["nome"])
+  @delete = delete_equipamento(@equipamentoBDD["nome"])
 end
 
 Dado("que eu tenha os seguintes equipamentos cadastrados:") do |table|
@@ -33,5 +33,5 @@ end
 
 Então("devo visualizar a mensagem  com o {string} do equipamento ja cadastrado") do |nome|
   expect(@equipamentojacadastrado.parsed_response).to eql "O cadastro do equipamento '#{nome}' já existe!"
-  @delete = delete_all(@equipamentoBDD["nome"])
+  @delete = delete_equipamento(@equipamentoBDD["nome"])
 end

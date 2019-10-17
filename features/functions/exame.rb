@@ -1,4 +1,4 @@
-def cadastro_exame(endpoint, equipamentoBDD, exameBDD)
+def cadastro_exame(endpoint, equipamentoBDD, exameBDD, materialBDD)
   @header = {
     'Content-Type': "application/json",
   }
@@ -6,7 +6,7 @@ def cadastro_exame(endpoint, equipamentoBDD, exameBDD)
   @body = {
     codigo: "#{exameBDD}",
     codigoInterface: "COD A",
-    material: "SORO",
+    material: "#{materialBDD}",
     equipamento: "#{equipamentoBDD}",
   }.to_json
 
@@ -23,10 +23,9 @@ end
 #   return HTTParty.get(endpoint, headers: @header)
 # end
 
-def delete_all(exames)
+def delete_exame(exames)
   endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/exames"
   body = { codigo: "#{exames}" }.to_json
-  puts body
   result = HTTParty.delete(endpoint, headers: @header, body: body)
   expect(result.response.code).to eql "200"
 end
