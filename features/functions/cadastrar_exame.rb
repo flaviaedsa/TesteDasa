@@ -28,6 +28,5 @@ def delete_all(exames)
   body = { codigo: "#{exames}" }.to_json
   puts body
   result = HTTParty.delete(endpoint, headers: @header, body: body)
-  puts result.response.code
   expect(result.response.code).to eql "200"
 end

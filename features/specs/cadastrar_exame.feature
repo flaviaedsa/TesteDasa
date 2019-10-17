@@ -18,5 +18,5 @@ Funcionalidade: Cadastrar exame
 
         Exemplos:
         | nome      | exame  |
-        | SIEMENSS8 | teste8 |
+        | SIEMENSS9 | Teste9 |
         # | SIEMENSS7 | teste3 |
