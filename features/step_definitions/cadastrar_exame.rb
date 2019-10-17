@@ -11,11 +11,11 @@ end
 
 Quando("faço uma chamada do tipo POST para o endpoint de cadastro de exames") do
   @endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/exames"
-  @exame = cadastro_exame(@endpoint, @equipamentoBDD["nome"], @exameBDD["exame"])
+  @exame = cadastro_exame(@endpoint, @equipamentoBDD["nome"], @exameBDD["exame"], @exameBDD["material"])
 end
 
-Então("devo receber o codigo {string} para exame cadastrado com sucesso") do |codigo|
-  expect(@exame.code).to eql 200
+Então("devo receber o codigo {int} para exame cadastrado com sucesso") do |status_code|
+  expect(@exame.code).to eql status_code
 end
 
 Então("devo visualizar a mensagem  com o {string} do exame inserido com sucesso") do |exame|

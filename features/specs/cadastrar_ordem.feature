@@ -18,7 +18,7 @@ Funcionalidade: Cadastrar ordem
             | material2 | <material2> |
             | material3 | <material3> |
         Quando faço uma chamada do tipo POST para o endpoint de cadastro de ordens
-        Então devo receber o codigo "200" visualizar as ordens
+        Então devo receber o codigo 200 visualizar as ordens
         E devo visualizar uma ordem com 3 amostras
         E devo visualizar uma amostra com 2 exames que possuem o mesmo material
         E devo visualizar uma amostra para cada exame de material distinto

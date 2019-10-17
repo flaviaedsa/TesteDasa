@@ -7,8 +7,8 @@ Quando("faço uma chamada do tipo POST para o endpoint de cadastro de equipament
   @equipamento = cadastro_equipamento(@endpoint, @equipamentoBDD["nome"])
 end
 
-Então("devo receber o codigo {string} para equipamento cadastrado com sucesso") do |codigo|
-  expect(@equipamento.code).to eql 200
+Então("devo receber o codigo {int} para equipamento cadastrado com sucesso") do |status_code|
+  expect(@equipamento.code).to eql status_code
 end
 
 Então("devo visualizar a mensagem  com o {string} do equipamento inserido com sucesso") do |nome|
@@ -27,8 +27,8 @@ Quando("faço uma chamada do tipo POST passando equipamentos ja cadastrados") do
   @equipamentojacadastrado = cadastro_equipamento(@endpoint, @equipamentoBDD["nome"])
 end
 
-Então("devo receber o codigo {string} para equipamento ja existente") do |codigo|
-  expect(@equipamentojacadastrado.code).to eql 409
+Então("devo receber o codigo {int} para equipamento ja existente") do |status_code|
+  expect(@equipamentojacadastrado.code).to eql status_code
 end
 
 Então("devo visualizar a mensagem  com o {string} do equipamento ja cadastrado") do |nome|

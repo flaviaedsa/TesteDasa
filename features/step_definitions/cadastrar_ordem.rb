@@ -13,17 +13,17 @@ Quando("faço uma chamada do tipo POST para o endpoint de cadastro de ordens") d
   @ordem = cadastro_ordem(@endpoint, @equipamentoBDD["nome"], @exameBDD["exame1"], @exameBDD["exame2"], @exameBDD["exame3"], @exameBDD["exame4"])
 end
 
-Então("devo receber o codigo {string} visualizar as ordens") do |codigo|
-  expect(@ordem.code).to eql 200
+Então("devo receber o codigo {int} visualizar as ordens") do |status_code|
+  expect(@ordem.code).to eql status_code
 end
 
-Então("devo visualizar uma ordem com {int} amostras") do |ordem|
+Então("devo visualizar uma ordem com {int} amostras") do |amostras|
   @todas_ordens = obter_ordens(@ordem["nome"])
-  expect(@todas_ordens[0]["amostras"].count).to eql 3
+  expect(@todas_ordens[0]["amostras"].count).to eql amostras
 end
 
-Então("devo visualizar uma amostra com {int} exames que possuem o mesmo material") do |ordem|
-  expect((@todas_ordens[0]["amostras"][0]["exames"]).count).to eql 2
+Então("devo visualizar uma amostra com {int} exames que possuem o mesmo material") do |exames|
+  expect((@todas_ordens[0]["amostras"][0]["exames"]).count).to eql exames
   expect(@todas_ordens[0]["amostras"][0]["material"]).to eql @exameBDD["material1"]
   expect(@todas_ordens[0]["amostras"][0]["exames"][0]["codigo"]).to include @exameBDD["exame1"]
   expect(@todas_ordens[0]["amostras"][0]["exames"][1]["codigo"]).to include @exameBDD["exame2"]
