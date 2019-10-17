@@ -19,13 +19,21 @@ end
 
 Então("devo visualizar uma ordem com {int} amostras") do |ordem|
   @todas_ordens = obter_ordens(@ordem["nome"])
-  puts @todas_ordens
+  expect(@todas_ordens[0]["amostras"].count).to eql 3
 end
 
-Então("devo visualizar uma ordem com {int} exames que possuem o mesmo material") do |ordem|
+Então("devo visualizar uma amostra com {int} exames que possuem o mesmo material") do |ordem|
+  expect((@todas_ordens[0]["amostras"][0]["exames"]).count).to eql 2
+  expect(@todas_ordens[0]["amostras"][0]["material"]).to eql @exameBDD["material1"]
+  expect(@todas_ordens[0]["amostras"][0]["exames"][0]["codigo"]).to include @exameBDD["exame1"]
+  expect(@todas_ordens[0]["amostras"][0]["exames"][1]["codigo"]).to include @exameBDD["exame2"]
 end
 
-Então("devo visualizzar uma ordem para cada exame de material distinto") do
+Então("devo visualizar uma amostra para cada exame de material distinto") do
+  expect(@todas_ordens[0]["amostras"][1]["material"]).to eql @exameBDD["material2"]
+  expect(@todas_ordens[0]["amostras"][1]["exames"][0]["codigo"]).to eql @exameBDD["exame3"]
+  expect(@todas_ordens[0]["amostras"][2]["material"]).to eql @exameBDD["material3"]
+  expect(@todas_ordens[0]["amostras"][2]["exames"][0]["codigo"]).to eql @exameBDD["exame4"]
   @delete = delete_exame(@exameBDD["exame1"])
   @delete = delete_exame(@exameBDD["exame2"])
   @delete = delete_exame(@exameBDD["exame3"])

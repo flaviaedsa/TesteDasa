@@ -4,7 +4,7 @@ def cadastro_ordem(endpoint, equipamentoBDD, exame1BDD, exame2BDD, exame3BDD, ex
   }
 
   @body = {
-    nome: "FLAVIA DA SILVA",
+    nome: "FABIO",
     nascimento: "13/11/1988",
     sexo: "M",
     leito: "Leito A",
@@ -26,12 +26,5 @@ end
 
 def obter_ordens(nome)
   endpoint = "http://contigencia-hospitalar-dev.azurewebsites.net/ordens/#{nome}"
-  puts endpoint
-
-  #   @header = {
-  #     'Content-Type': "application/json",
-  #   }
-
-  resultado = HTTParty.get(endpoint)
-  puts resultado
+  return HTTParty.get(endpoint)
 end

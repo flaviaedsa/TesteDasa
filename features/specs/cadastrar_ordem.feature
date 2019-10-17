@@ -20,8 +20,8 @@ Funcionalidade: Cadastrar ordem
         Quando faço uma chamada do tipo POST para o endpoint de cadastro de ordens
         Então devo receber o codigo "200" visualizar as ordens
         E devo visualizar uma ordem com 3 amostras
-        E devo visualizar uma ordem com 2 exames que possuem o mesmo material
-        E devo visualizzar uma ordem para cada exame de material distinto
+        E devo visualizar uma amostra com 2 exames que possuem o mesmo material
+        E devo visualizar uma amostra para cada exame de material distinto
 
         Exemplos:
         | nome      | exame1    | exame2    | exame3 | exame4 | material1 | material2 | material3 |
