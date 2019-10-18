@@ -19,9 +19,9 @@ Funcionalidade: Cadastrar exame
         E devo visualizar a mensagem  com o "<exame>" do exame inserido com sucesso
 
         Exemplos:
-            | nome      | protocolo | exame  | material |
-            | SIEMENSS9 | ASTM      | Teste9 | Soro     |
-            | SIEMENSS7 | ASTM      | Teste7 | Soro     |
+            | nome     | protocolo | exame     | material |
+            | SIEMENSS | ASTM      | Urina     | Soro     |
+            | SIEMENSS | ASTM      | Ferritina | Soro     |
 
 
     Esquema do Cenario: Exame não cadastrado por falta de equipamento
@@ -32,9 +32,9 @@ Funcionalidade: Cadastrar exame
             | exame    | <exame>    |
             | material | <material> |
         Quando faço uma chamada do tipo POST para o endpoint de cadastro de exames com equipamento inexistente
-        Então devo receber o codigo 412 para exame cadastrado com sucesso
+        Então devo receber o codigo 412 para exame não cadastrado
         E devo visualizar a mensagem de que é necessario cadastrar um equipamento
         Exemplos: 
-            | nome      | protocolo | exame  | material | 
-            | SIEMENSS9 | ASTM      | Teste9 | Soro     |      
+            | nome     | protocolo | exame  | material | 
+            | SIEMENSS | ASTM      | Ferro  | Soro     |      
               

@@ -25,5 +25,26 @@ Funcionalidade: Cadastrar ordem
         E devo visualizar uma amostra para cada exame de material distinto
 
         Exemplos:
+            | nome     | protocolo | exame1    | exame2    | exame3 | exame4 | material1 | material2 | material3 |
+            | SIEMENSS | ASTM      | Hemograma | VitaminaD | B12    | Urina  | Soro      | Sangue    | Urina     |    
+
+
+    Esquema do Cenario: Ordem não cadastrada por falta de exame
+        Dado que eu tenha um equipamento cadastrado:
+            | nome      | <nome>      |
+            | protocolo | <protocolo> |
+        E tenha os seguintes exames cadastrados:  
+            | exame1    | <exame1>    |
+            | exame2    | <exame2>    |
+            | exame3    | <exame3>    |
+            | exame4    | <exame4>    |
+            | material1 | <material1> |
+            | material2 | <material2> |
+            | material3 | <material3> |
+        Quando faço uma chamada do tipo POST para o endpoint de cadastro de ordens com exame inexistente
+        Então devo receber o codigo 412 para ordem não cadastrada
+        E devo visualizar a mensagem de que é necessario cadastrar um exame
+
+        Exemplos:
             | nome      | protocolo | exame1    | exame2    | exame3 | exame4 | material1 | material2 | material3 |
-            | SIEMENSS9 | ASTM      | Hemograma | VitaminaD | B12    | Urina  | Soro      | Sangue    | Urina     |      
+            | SIEMENSS  | ASTM      | Hemograma | VitaminaD | B12    | Urina  | Soro      | Sangue    | Urina     |          

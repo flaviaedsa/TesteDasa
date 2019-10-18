@@ -25,6 +25,9 @@ Então("devo visualizar a mensagem  com o {string} do exame inserido com sucesso
 end
 
 #-----------------------------------------------------------------------------------------------------------#
+Então("devo receber o codigo {int} para exame não cadastrado") do |status_code|
+  expect(@exame.code).to eql status_code
+end
 
 Quando("faço uma chamada do tipo POST para o endpoint de cadastro de exames com equipamento inexistente") do
   @endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["exames"]}"

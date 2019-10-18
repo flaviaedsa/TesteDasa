@@ -40,3 +40,23 @@ Então("devo visualizar uma amostra para cada exame de material distinto") do
   @delete = delete_exame(@exameBDD["exame4"])
   @delete = delete_equipamento(@equipamentoBDD["nome"])
 end
+
+#------------------------------------------------------------------------------------------#
+
+Quando("faço uma chamada do tipo POST para o endpoint de cadastro de ordens com exame inexistente") do
+  @endpoint = "#{CONFIG["apis"]["base_url"]}#{CONFIG["apis"]["ordens"]}"
+  @ordem = cadastro_ordem(@endpoint, @equipamentoBDD["nome"], "inexistente", "inexistente", "inexistente", "inexistente")
+  @delete = delete_exame(@exameBDD["exame1"])
+  @delete = delete_exame(@exameBDD["exame2"])
+  @delete = delete_exame(@exameBDD["exame3"])
+  @delete = delete_exame(@exameBDD["exame4"])
+  @delete = delete_equipamento(@equipamentoBDD["nome"])
+end
+
+Então("devo receber o codigo {int} para ordem não cadastrada") do |status_code|
+  expect(@ordem.code).to eql status_code
+end
+
+Então("devo visualizar a mensagem de que é necessario cadastrar um exame") do
+  expect(@ordem.parsed_response).to eql "Não foi possível cadastrar a Ordem pelos seguintes problemas: Exame 'inexistente' não encontrado na base de exames!"
+end
